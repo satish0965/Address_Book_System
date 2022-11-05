@@ -41,6 +41,7 @@ namespace AddressBookSystem
             Console.WriteLine("8)Enter Email-Id");
             contact.Email = Console.ReadLine();
 
+            //created addressBook list use to store 
             addressBook.Add(contact);
 
         }
@@ -54,7 +55,8 @@ namespace AddressBookSystem
 
             foreach (Contact contact in addressBook)
             {
-                if (contact.FirstName == newcontact.FirstName)
+                //ToLower() added which convert any String into lower case
+                if (contact.FirstName.ToLower() == newcontact.FirstName.ToLower())
                 {
                     Console.WriteLine("Person with this Name Already Exists");
                     return;
@@ -91,7 +93,7 @@ namespace AddressBookSystem
 
             foreach (Contact contact in addressBook)
             {
-                if (contact.FirstName == FirstName)
+                if (contact.FirstName.ToLower() == FirstName.ToLower())
                 {
                     Console.WriteLine("First Name Matches, please Enter Details to Edit ");
                     Console.WriteLine("Select options to Edit Details :\n" +
@@ -153,6 +155,23 @@ namespace AddressBookSystem
                 }
                 Console.WriteLine("No Contact Details found");
             }
+        }
+
+        public void DeleteContact()
+        {
+            Console.WriteLine("Please Enter Name of Person to Edit");
+            string FirstName = Console.ReadLine();
+
+            foreach (Contact contact in addressBook)
+            {
+                if (contact.FirstName.ToLower() == FirstName.ToLower())
+                {
+                    addressBook.Remove(contact);
+                    Console.WriteLine("Entered First Name is Deleted from the List");
+                    return;
+                }
+            }
+            Console.WriteLine("Contact not Found ");
         }
 
         //Display method 
