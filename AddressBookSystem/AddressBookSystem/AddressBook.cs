@@ -41,7 +41,7 @@ namespace AddressBookSystem
             Console.WriteLine("8)Enter Email-Id");
             contact.Email = Console.ReadLine();
 
-            //created addressBook list use to store 
+            //created addressBook list use to store contacts 
             addressBook.Add(contact);
 
         }
@@ -147,6 +147,7 @@ namespace AddressBookSystem
                             break;
 
                         default:
+
                             Console.WriteLine("Please Enter proper option");
                             break;
 
@@ -185,7 +186,7 @@ namespace AddressBookSystem
             {
 
                 addPerson();
-                Console.WriteLine(":::::::::::::::::::::::::::;");
+                Console.WriteLine("::::::::::::::::::::::::::::");
                 Number--;
             }
         }

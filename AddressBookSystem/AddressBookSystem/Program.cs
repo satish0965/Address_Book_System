@@ -18,7 +18,8 @@ namespace AddressBooksystem
                     "2)Add new Contact, Display and Stores contact in the list\n" +
                     "3)Edit Details of Contact\n" +
                     "4)Remove Contact Details from the List\n" +
-                    "5)Enter numbers for Adding Multiple Contacts\n");
+                    "5)Enter numbers for Adding Multiple Contacts\n" +
+                    "6)Refactoring Multiple AddressBook Which Has Unique Name\n");
 
                 int option = Convert.ToInt32(Console.ReadLine());
 
@@ -181,14 +182,94 @@ namespace AddressBooksystem
                         }
                         break;
 
+                    case 6:
+
+
+                        AddressBook addobj5 = new AddressBook();
+                        Console.WriteLine("::::::::::::::::::::::::::");
+
+                        UniqueNameDict unique = new UniqueNameDict();
+
+                        bool check4 = true;
+
+                        while (check4)
+                        {
+                            Console.WriteLine("Please Choose Options For:\n" +
+                               "1) To Add Addressbook\n" + "2) To Edit Addressbook\n" +
+                               "3) To Exit\n");
+
+                            int option1 = Convert.ToInt32(Console.ReadLine());
+
+                            switch (option1)
+                            {
+                                case 1:
+                                    Console.WriteLine("Add Contacts to the AddressBook");
+                                    unique.NewAddressBook();
+                                    break;
+
+                                case 2:
+                                    Console.WriteLine("Edit the Name Which you want from AddressBook");
+                                    string addName = Console.ReadLine();
+
+                                    if (unique.addBookobj.ContainsKey(addName.ToLower())) ;
+                                    {
+                                        bool opt = true;
+                                        while (opt)
+                                        {
+                                            Console.WriteLine("Follow Steps to add details:\n" +
+                                                            "1) To addContact\n" + "2) To Edit Contact\n" +
+                                                            "3) To Remove Contact\n" + "4) Adding Multiple Contacts\n" +
+                                                            "5) To Display Contact\n");
+
+                                            int select1 = Convert.ToInt32(Console.ReadLine());
+                                            switch (select1)
+                                            {
+
+                                                case 1:
+                                                    addobj5.addPerson();
+                                                    Console.WriteLine(":::::::::::::::::::::::::::;");
+                                                    break;
+
+                                                case 2:
+                                                    addobj5.EditContact();
+                                                    Console.WriteLine(":::::::::::::::::::::::::::;");
+                                                    break;
+
+                                                case 3:
+                                                    addobj5.DeleteContact();
+                                                    Console.WriteLine(":::::::::::::::::::::::::::;");
+                                                    break;
+
+                                                case 4:
+                                                    addobj5.AddMultipleContact();
+                                                    Console.WriteLine(":::::::::::::::::::::::::::;");
+                                                    break;
+
+                                                case 5:
+                                                    addobj5.Display();
+                                                    Console.WriteLine(":::::::::::::::::::::::::::;");
+                                                    break;
+
+
+                                                default:
+
+                                                    check = !check;
+                                                    break;
+                                            }
+                                        }
+                                    }
+                                    break;
+                            }
+                        }
+                        break;
+
                     default:
-                        Console.WriteLine("Please select proper option");
+                        Console.WriteLine("Closing AddressBook");
                         break;
                 }
-                check = false;
-                Console.WriteLine("Try Again ");
-                break;
+
             }
+
         }
     }
 
