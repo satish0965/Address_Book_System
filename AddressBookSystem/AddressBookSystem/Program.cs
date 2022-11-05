@@ -17,7 +17,8 @@ namespace AddressBooksystem
                     "1)Enter Details to add Contact in List\n" +
                     "2)Add new Contact, Display and Stores contact in the list\n" +
                     "3)Edit Details of Contact\n" +
-                    "4)Remove Contact Details from the List\n");
+                    "4)Remove Contact Details from the List\n" +
+                    "5)Enter numbers for Adding Multiple Contacts\n");
 
                 int option = Convert.ToInt32(Console.ReadLine());
 
@@ -113,6 +114,61 @@ namespace AddressBooksystem
 
                                 case 4:
                                     addobj3.Display();
+                                    Console.WriteLine(":::::::::::::::::::::::::::;");
+                                    break;
+
+                                case 5:
+                                    addobj3.AddMultipleContact();
+                                    Console.WriteLine(":::::::::::::::::::::::::::;");
+                                    break;
+
+                                default:
+
+                                    check = !check;
+                                    break;
+                            }
+                        }
+                        break;
+
+                    case 5:
+
+                        AddressBook addobj4 = new AddressBook();
+                        Console.WriteLine("::::::::::::::::::::::::::");
+
+                        bool check3 = true;
+
+                        while (check3)
+                        {
+                            Console.WriteLine("Follow Steps to add details:\n" +
+                               "1) To addContact\n" + "2) To Edit Contact\n" +
+                               "3) To Remove Contact\n" + "4) Adding Multiple Contacts\n" +
+                               "5) To Display Contact\n");
+
+                            int select = Convert.ToInt32(Console.ReadLine());
+                            switch (select)
+                            {
+                                case 1:
+                                    addobj4.addPerson();
+                                    Console.WriteLine(":::::::::::::::::::::::::::;");
+                                    break;
+
+                                case 2:
+                                    addobj4.EditContact();
+                                    Console.WriteLine(":::::::::::::::::::::::::::;");
+                                    break;
+
+                                case 3:
+                                    addobj4.DeleteContact();
+                                    Console.WriteLine(":::::::::::::::::::::::::::;");
+                                    break;
+
+                                case 4:
+                                    addobj4.AddMultipleContact();
+                                    Console.WriteLine(":::::::::::::::::::::::::::;");
+                                    break;
+
+                                case 5:
+                                    addobj4.Display();
                                     Console.WriteLine(":::::::::::::::::::::::::::;");
                                     break;
 
